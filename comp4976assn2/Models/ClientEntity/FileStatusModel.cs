@@ -6,10 +6,10 @@ using System.Web;
 
 namespace comp4976assn2.Models.ClientEntity
 {
-    public class FiscalYearModel
+    public class FileStatusModel
     {
         [Key]
-        public String FiscalYear { get; set; }
+        public String FileStatus { get; set; }
         public List<ClientModel> Client { get; set; }
     }
 }

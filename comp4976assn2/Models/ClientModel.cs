@@ -8,6 +8,8 @@ namespace comp4976assn2.Models
 {
     public class ClientModel
     {
+        [Key]
+        public int ClientReferenceNumber { get; set; }
         
         [Range(1, 12, ErrorMessage = "Month must be between 1 and 12")]
         public int Month { get; set; }
@@ -25,7 +27,6 @@ namespace comp4976assn2.Models
         public int CourtFileNumber { get; set; }
         public int SWCFileNumber { get; set; }
         public String RiskAssessmentAssignedTo { get; set; }
-        public int ClientReferenceNumber { get; set; }
         public String AbuserName { get; set; }
         public char Gender { get; set; }
         public int NumberChildren6 { get; set; }
