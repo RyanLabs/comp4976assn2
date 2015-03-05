@@ -15,14 +15,14 @@ namespace comp4976assn2.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Our Mission and Mandate.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "The Good Samaritan";
 
             return View();
         }
