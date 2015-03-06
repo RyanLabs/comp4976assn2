@@ -14,6 +14,7 @@ namespace comp4976assn2.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            ContextKey = "comp4976assn2.Models.ApplicationDbContext";
         }
 
         protected override void Seed(comp4976assn2.Models.ApplicationDbContext context)
@@ -40,13 +41,9 @@ namespace comp4976assn2.Migrations
                 roleManager.Create(new IdentityRole(report));
             }
 
-            // User Manager
-            var userStore = new UserStore<ApplicationUser>(context);
-            var userManager = new UserManager<ApplicationUser>(userStore);
-
             // Create Users
             var passwordHash = new PasswordHasher();
-            string password = passwordHash.HashPassword("P@$$w0rd");
+            var password = passwordHash.HashPassword("P@$$w0rd");
 
             var adam = new ApplicationUser { UserName = "adam@gs.ca", PasswordHash = password };
             var wendy = new ApplicationUser { UserName = "wendy@gs.ca", PasswordHash = password };
@@ -56,19 +53,14 @@ namespace comp4976assn2.Migrations
             context.Users.AddOrUpdate(u => u.UserName, wendy);
             context.Users.AddOrUpdate(u => u.UserName, rob);
 
+            // User Manager
+            var userStore = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(userStore);
+
             // Add Users to Roles
-            if (context.Users.Any(u => u.UserName == adam.UserName))
-            {
-                userManager.AddToRole(adam.Id, admin);
-            }
-            if (context.Users.Any(u => u.UserName == wendy.UserName))
-            {
-                userManager.AddToRole(wendy.Id, worker);
-            }
-            if (context.Users.Any(u => u.UserName == rob.UserName))
-            {
-                userManager.AddToRole(rob.Id, report);
-            }
+            userManager.AddToRole(adam.Id, admin);
+            userManager.AddToRole(wendy.Id, worker);
+            userManager.AddToRole(rob.Id, report);
 
             base.Seed(context);
         }
