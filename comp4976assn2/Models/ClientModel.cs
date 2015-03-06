@@ -16,14 +16,10 @@ namespace comp4976assn2.Models
         public int ClientReferenceNumber { get; set; }
 
         [Required]
-        [StringLength(2)]
-        [MaxLength(2)]
         [Range(1, 12, ErrorMessage = "Month must be between 1 and 12")]
         public int Month { get; set; }
 
         [Required]
-        [StringLength(2)]
-        [MaxLength(2)]
         [Range(1, 31, ErrorMessage = "Day must be between 1 and 31")]
         public int Day { get; set; }
 
@@ -71,18 +67,12 @@ namespace comp4976assn2.Models
         public char Gender { get; set; }
 
         [DisplayName("Number of Children (0-6)")]
-        [StringLength(2)]
-        [MaxLength(2)]
         public int NumberChildren6 { get; set; }
 
         [DisplayName("Number of Children (7-12)")]
-        [StringLength(2)]
-        [MaxLength(2)]
         public int NumberChildren12 { get; set; }
 
         [DisplayName("Number of Children (13-18)")]
-        [StringLength(2)]
-        [MaxLength(2)]
         public int NumberChildren18 { get; set; }
 
         [DisplayName("Date Last Transferred")]

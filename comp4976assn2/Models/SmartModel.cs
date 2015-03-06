@@ -33,7 +33,7 @@ namespace comp4976assn2.Models
         public HIVMedsModel HivMeds { get; set; }
         public ReferredToCBVSModel ReferredToCbvs { get; set; }
         public PoliceReportedModel PoliceReported { get; set; }
-        public ThirdPartyReportedModel ThirdPartyReported { get; set; }
+        public ThirdPartyReportModel ThirdPartyReport { get; set; }
         public BadDateReportModel BadDateReport { get; set; }
 
     }
