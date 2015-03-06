@@ -45,9 +45,9 @@ namespace comp4976assn2.Migrations
             var passwordHash = new PasswordHasher();
             var password = passwordHash.HashPassword("P@$$w0rd");
 
-            var adam = new ApplicationUser { UserName = "adam@gs.ca", PasswordHash = password };
-            var wendy = new ApplicationUser { UserName = "wendy@gs.ca", PasswordHash = password };
-            var rob = new ApplicationUser { UserName = "rob@gs.ca", PasswordHash = password };
+            var adam = new ApplicationUser { UserName = "adam", Email = "adam@gs.ca", PasswordHash = password };
+            var wendy = new ApplicationUser { UserName = "wendy", Email = "wendy@gs.ca", PasswordHash = password };
+            var rob = new ApplicationUser { UserName = "rob", Email = "rob@gs.ca", PasswordHash = password };
 
             context.Users.AddOrUpdate(u => u.UserName, adam);
             context.Users.AddOrUpdate(u => u.UserName, wendy);
@@ -57,7 +57,7 @@ namespace comp4976assn2.Migrations
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
 
-            // Add Users to Roles
+            // Add Users to Roles                  
             userManager.AddToRole(adam.Id, admin);
             userManager.AddToRole(wendy.Id, worker);
             userManager.AddToRole(rob.Id, report);
