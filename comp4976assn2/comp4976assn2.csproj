@@ -159,10 +159,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503061055038_InitialMigration.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503061055038_InitialMigration.Designer.cs">
+      <DependentUpon>201503061055038_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -203,7 +206,7 @@
     <Compile Include="Models\SmartEntity\ReferringHospitalModel.cs" />
     <Compile Include="Models\SmartEntity\SexWorkExploitationModel.cs" />
     <Compile Include="Models\SmartEntity\SocialWorkAttendanceModel.cs" />
-    <Compile Include="Models\SmartEntity\ThirdPartyReportedModel.cs" />
+    <Compile Include="Models\SmartEntity\ThirdPartyReportModel.cs" />
     <Compile Include="Models\SmartEntity\VictimServicesAttendanceModel.cs" />
     <Compile Include="Models\SmartModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +220,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Migrations\Configuration.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -271,6 +275,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503061055038_InitialMigration.resx">
+      <DependentUpon>201503061055038_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

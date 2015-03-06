@@ -11,8 +11,11 @@ namespace comp4976assn2.Models
     public class SmartModel
     {
         [Key]
+        public int SmartId { get; set; }
+
+        public int ClientReferenceNumber { get; set; }
         [ForeignKey("ClientReferenceNumber")]
-        public ClientModel ClientReferenceNumber { get; set; }
+        public ClientModel Client { get; set; }
 
         public int AccompanimentMinutes { get; set; }
         public int NumberTransportsProvided { get; set; }

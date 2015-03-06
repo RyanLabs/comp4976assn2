@@ -53,3 +53,5 @@ D:\Documents\Sites\comp4976\comp4976assn2\comp4976assn2\bin\Microsoft.Owin.Secur
 D:\Documents\Sites\comp4976\comp4976assn2\comp4976assn2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Documents\Sites\comp4976\comp4976assn2\comp4976assn2\obj\Debug\comp4976assn2.dll
 D:\Documents\Sites\comp4976\comp4976assn2\comp4976assn2\obj\Debug\comp4976assn2.pdb
+D:\Documents\Sites\comp4976\comp4976assn2\comp4976assn2\obj\Debug\comp4976assn2.Migrations.ClientMigrations.InitialMigration.resources
+D:\Documents\Sites\comp4976\comp4976assn2\comp4976assn2\obj\Debug\comp4976assn2.csproj.GenerateResource.Cache

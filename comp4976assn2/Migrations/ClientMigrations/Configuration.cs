@@ -21,19 +21,19 @@ namespace comp4976assn2.Migrations.ClientMigrations
         {
             context.FiscalYearModels.AddOrUpdate(
                 f => f.FiscalYear,
-                new FiscalYearModel {FiscalYear = "10-11"},
-                new FiscalYearModel {FiscalYear = "11-12"},
-                new FiscalYearModel {FiscalYear = "12-13"},
-                new FiscalYearModel {FiscalYear = "13-14"},
-                new FiscalYearModel {FiscalYear = "14-15"},
-                new FiscalYearModel {FiscalYear = "15-16"},
-                new FiscalYearModel {FiscalYear = "16-17"}
+                new FiscalYearModel { FiscalYear = "10-11" },
+                new FiscalYearModel { FiscalYear = "11-12" },
+                new FiscalYearModel { FiscalYear = "12-13" },
+                new FiscalYearModel { FiscalYear = "13-14" },
+                new FiscalYearModel { FiscalYear = "14-15" },
+                new FiscalYearModel { FiscalYear = "15-16" },
+                new FiscalYearModel { FiscalYear = "16-17" }
             );
 
             context.RiskLevelModels.AddOrUpdate(
                 r => r.RiskLevel,
-                new RiskLevelModel {RiskLevel = "High"},
-                new RiskLevelModel {RiskLevel = "DVU"}
+                new RiskLevelModel { RiskLevel = "High" },
+                new RiskLevelModel { RiskLevel = "DVU" }
             );
 
             context.CrisisModels.AddOrUpdate(
@@ -46,46 +46,46 @@ namespace comp4976assn2.Migrations.ClientMigrations
             context.ServiceModels.AddOrUpdate(
                 s => s.Service,
                 new ServiceModel { Service = "N/A" },
-                new ServiceModel { Service = "File"}
+                new ServiceModel { Service = "File" }
             );
 
             context.ProgramModels.AddOrUpdate(
                 p => p.Program,
-                new ProgramModel { Program = "Crisis"},
-                new ProgramModel { Program = "Court"},
-                new ProgramModel { Program = "SMART"},
-                new ProgramModel { Program = "DVU"},
-                new ProgramModel { Program = "MCFD"}
+                new ProgramModel { Program = "Crisis" },
+                new ProgramModel { Program = "Court" },
+                new ProgramModel { Program = "SMART" },
+                new ProgramModel { Program = "DVU" },
+                new ProgramModel { Program = "MCFD" }
             );
 
             context.RiskStatusModels.AddOrUpdate(
                 r => r.RiskStatus,
-                new RiskStatusModel { RiskStatus = "Pending"},
-                new RiskStatusModel { RiskStatus = "Complete"},
-                new RiskStatusModel { RiskStatus = "null"}
+                new RiskStatusModel { RiskStatus = "Pending" },
+                new RiskStatusModel { RiskStatus = "Complete" },
+                new RiskStatusModel { RiskStatus = "null" }
             );
 
             context.AssignedWorkerModels.AddOrUpdate(
                 a => a.AssignedWorker,
-                new AssignedWorkerModel { AssignedWorker = "Michelle"},
-                new AssignedWorkerModel { AssignedWorker = "Tyra"},
-                new AssignedWorkerModel { AssignedWorker = "Louise"},
-                new AssignedWorkerModel { AssignedWorker = "Angela"},
-                new AssignedWorkerModel { AssignedWorker = "Dave"},
-                new AssignedWorkerModel { AssignedWorker = "Troy"},
-                new AssignedWorkerModel { AssignedWorker = "Michael"},
-                new AssignedWorkerModel { AssignedWorker = "Manpreet"},
-                new AssignedWorkerModel { AssignedWorker = "Patrick"},
-                new AssignedWorkerModel { AssignedWorker = "None"}
+                new AssignedWorkerModel { AssignedWorker = "Michelle" },
+                new AssignedWorkerModel { AssignedWorker = "Tyra" },
+                new AssignedWorkerModel { AssignedWorker = "Louise" },
+                new AssignedWorkerModel { AssignedWorker = "Angela" },
+                new AssignedWorkerModel { AssignedWorker = "Dave" },
+                new AssignedWorkerModel { AssignedWorker = "Troy" },
+                new AssignedWorkerModel { AssignedWorker = "Michael" },
+                new AssignedWorkerModel { AssignedWorker = "Manpreet" },
+                new AssignedWorkerModel { AssignedWorker = "Patrick" },
+                new AssignedWorkerModel { AssignedWorker = "None" }
             );
 
             context.ReferralSourceModels.AddOrUpdate(
                 r => r.ReferralSource,
-                new ReferralSourceModel { ReferralSource = "Community Agency"},
-                new ReferralSourceModel { ReferralSource = "Family/Friend"},
-                new ReferralSourceModel { ReferralSource = "Government"},
-                new ReferralSourceModel { ReferralSource = "CVAP"},
-                new ReferralSourceModel { ReferralSource = "CBVS"}
+                new ReferralSourceModel { ReferralSource = "Community Agency" },
+                new ReferralSourceModel { ReferralSource = "Family/Friend" },
+                new ReferralSourceModel { ReferralSource = "Government" },
+                new ReferralSourceModel { ReferralSource = "CVAP" },
+                new ReferralSourceModel { ReferralSource = "CBVS" }
             );
 
             context.ReferralContactModels.AddOrUpdate(
@@ -100,7 +100,7 @@ namespace comp4976assn2.Migrations.ClientMigrations
                 new ReferralContactModel { ReferralContact = "Other" },
                 new ReferralContactModel { ReferralContact = "Medical" }
             );
-            
+
             context.IncidentModels.AddOrUpdate(
                 i => i.Incident,
                 new IncidentModel { Incident = "Abduction" },
@@ -128,7 +128,6 @@ namespace comp4976assn2.Migrations.ClientMigrations
                 new AbuserRelationshipModel { AbuserRelationship = "Acquaintance" },
                 new AbuserRelationshipModel { AbuserRelationship = "Bad Date" },
                 new AbuserRelationshipModel { AbuserRelationship = "DNA" },
-                new AbuserRelationshipModel { AbuserRelationship = "Ex-Partner" },
                 new AbuserRelationshipModel { AbuserRelationship = "Ex-Partner" },
                 new AbuserRelationshipModel { AbuserRelationship = "Multiple Perps" },
                 new AbuserRelationshipModel { AbuserRelationship = "N/A" },
@@ -183,7 +182,7 @@ namespace comp4976assn2.Migrations.ClientMigrations
 
             context.DuplicateFileModels.AddOrUpdate(
                 d => d.DuplicateFile,
-                new DuplicateFileModel { DuplicateFile = "Yes"}
+                new DuplicateFileModel { DuplicateFile = "Yes" }
             );
 
             context.FileStatusModels.AddOrUpdate(
@@ -214,7 +213,6 @@ namespace comp4976assn2.Migrations.ClientMigrations
                 new CityOfAssaultModel { CityOfAssault = "Agassiz" },
                 new CityOfAssaultModel { CityOfAssault = "Boston Bar" },
                 new CityOfAssaultModel { CityOfAssault = "Burnaby" },
-                new CityOfAssaultModel { CityOfAssault = "Burnaby" },
                 new CityOfAssaultModel { CityOfAssault = "Coquitlam" },
                 new CityOfAssaultModel { CityOfAssault = "Delta" },
                 new CityOfAssaultModel { CityOfAssault = "Harrison Hot Springs" },
@@ -239,7 +237,6 @@ namespace comp4976assn2.Migrations.ClientMigrations
                 new CityOfResidenceModel { CityOfResidence = "Abbotsford" },
                 new CityOfResidenceModel { CityOfResidence = "Agassiz" },
                 new CityOfResidenceModel { CityOfResidence = "Boston Bar" },
-                new CityOfResidenceModel { CityOfResidence = "Burnaby" },
                 new CityOfResidenceModel { CityOfResidence = "Burnaby" },
                 new CityOfResidenceModel { CityOfResidence = "Coquitlam" },
                 new CityOfResidenceModel { CityOfResidence = "Delta" },
