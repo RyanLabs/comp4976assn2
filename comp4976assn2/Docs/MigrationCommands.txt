@@ -1,0 +1,3 @@
+﻿Enable-Migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations\ClientMigrations
+add-migration -ConfigurationTypeName comp4976assn2.Migrations.ClientMigrations.Configuration InitialMigration
+update-database -ConfigurationTypeName comp4976assn2.Migrations.ClientMigrations.Configuration
