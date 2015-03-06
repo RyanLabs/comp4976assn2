@@ -1,3 +1,9 @@
-﻿Enable-Migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations\ClientMigrations
-add-migration -ConfigurationTypeName comp4976assn2.Migrations.ClientMigrations.Configuration InitialMigration
+﻿## Client migrations
+## Note: Auto-migration enabled. No need to add-migration.
+enable-Migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations\ClientMigrations
 update-database -ConfigurationTypeName comp4976assn2.Migrations.ClientMigrations.Configuration
+
+## Identity Model migrations
+## Note: Auto-migration enabled. No need to add-migration.
+enable-migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\IdentityMigrations
+update-database -ConfigurationTypeName comp4976assn2.Migrations.IdentityMigrations.Configuration

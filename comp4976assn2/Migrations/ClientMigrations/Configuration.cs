@@ -13,7 +13,7 @@ namespace comp4976assn2.Migrations.ClientMigrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\ClientMigrations";
         }
 
@@ -358,6 +358,7 @@ namespace comp4976assn2.Migrations.ClientMigrations
                 new BadDateReportModel { BadDateReport = "No" },
                 new BadDateReportModel { BadDateReport = "N/A" }
             );
+
         }
     }
 }
