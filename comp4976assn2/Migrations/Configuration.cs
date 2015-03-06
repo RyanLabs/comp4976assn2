@@ -45,34 +45,27 @@ namespace comp4976assn2.Migrations
             var userManager = new UserManager<ApplicationUser>(userStore);
 
             // Create Users
-            var adam = new ApplicationUser {UserName = "adam@gs.ca"};
-            var wendy = new ApplicationUser {UserName = "wendy@gs.ca"};
-            var rob = new ApplicationUser { UserName = "rob@gs.ca"};
+            var passwordHash = new PasswordHasher();
+            string password = passwordHash.HashPassword("P@$$w0rd");
 
-            IdentityResult adamCreate = null, wendyCreate = null, robCreate = null;
-            if (!context.Users.Any(u => u.UserName == "adam@gs.ca"))
-            {
-                adamCreate = userManager.Create(adam, "P@$$w0rd");
-            }
-            if (!context.Users.Any(u => u.UserName == "adam@gs.ca"))
-            {
-                wendyCreate = userManager.Create(wendy, "P@$$w0rd");
-            }
-            if (!context.Users.Any(u => u.UserName == "adam@gs.ca"))
-            {
-                robCreate = userManager.Create(rob, "P@$$w0rd");
-            }
+            var adam = new ApplicationUser { UserName = "adam@gs.ca", PasswordHash = password };
+            var wendy = new ApplicationUser { UserName = "wendy@gs.ca", PasswordHash = password };
+            var rob = new ApplicationUser { UserName = "rob@gs.ca", PasswordHash = password };
+
+            context.Users.AddOrUpdate(u => u.UserName, adam);
+            context.Users.AddOrUpdate(u => u.UserName, wendy);
+            context.Users.AddOrUpdate(u => u.UserName, rob);
 
             // Add Users to Roles
-            if (adamCreate != null && adamCreate.Succeeded)
+            if (context.Users.Any(u => u.UserName == adam.UserName))
             {
                 userManager.AddToRole(adam.Id, admin);
             }
-            if (wendyCreate != null && wendyCreate.Succeeded)
+            if (context.Users.Any(u => u.UserName == wendy.UserName))
             {
                 userManager.AddToRole(wendy.Id, worker);
             }
-            if (robCreate != null && robCreate.Succeeded)
+            if (context.Users.Any(u => u.UserName == rob.UserName))
             {
                 userManager.AddToRole(rob.Id, report);
             }
