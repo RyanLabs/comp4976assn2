@@ -14,6 +14,7 @@ namespace comp4976assn2.Models
         public int SmartId { get; set; }
 
         public int ClientReferenceNumber { get; set; }
+
         [ForeignKey("ClientReferenceNumber")]
         public ClientModel Client { get; set; }
 

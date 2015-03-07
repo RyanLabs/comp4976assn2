@@ -9,7 +9,8 @@ namespace comp4976assn2.Models.ClientEntity
     public class VictimOfIncidentModel
     {
         [Key]
+        public int VictimOfIncidentId { get; set; }
         public String VictimOfIncident { get; set; }
-        public List<ClientModel> Client { get; set; }
+        public ICollection<VictimOfIncidentModel> Clients { get; set; }
     }
 }

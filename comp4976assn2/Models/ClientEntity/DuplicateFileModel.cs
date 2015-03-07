@@ -9,7 +9,8 @@ namespace comp4976assn2.Models.ClientEntity
     public class DuplicateFileModel
     {
         [Key]
+        public int DuplicateFileId { get; set; }
         public String DuplicateFile { get; set; }
-        public List<ClientModel> Client { get; set; }
+        public ICollection<DuplicateFileModel> Clients { get; set; }
     }
 }

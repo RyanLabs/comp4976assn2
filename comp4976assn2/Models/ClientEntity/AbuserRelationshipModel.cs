@@ -9,7 +9,8 @@ namespace comp4976assn2.Models.ClientEntity
     public class AbuserRelationshipModel
     {
         [Key]
+        public int AbuserRelationshipId { get; set; }
         public String AbuserRelationship { get; set; }
-        public List<ClientModel> Client { get; set; }
+        public ICollection<AbuserRelationshipModel> Clients { get; set; }
     }
 }

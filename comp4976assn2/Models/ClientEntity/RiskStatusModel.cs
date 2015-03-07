@@ -9,7 +9,8 @@ namespace comp4976assn2.Models.ClientEntity
     public class RiskStatusModel
     {
         [Key]
+        public int RiskStatusId { get; set; }
         public String RiskStatus { get; set; }
-        public List<ClientModel> Client { get; set; }
+        public ICollection<RiskStatusModel> Clients { get; set; }
     }
 }

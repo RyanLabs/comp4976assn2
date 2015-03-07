@@ -9,7 +9,8 @@ namespace comp4976assn2.Models.ClientEntity
     public class ReferralSourceModel
     {
         [Key]
+        public int ReferralSourceId { get; set; }
         public String ReferralSource { get; set; }
-        public List<ClientModel> Client { get; set; }
+        public ICollection<ReferralSourceModel> Clients { get; set; }
     }
 }
