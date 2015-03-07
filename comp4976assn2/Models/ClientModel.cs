@@ -13,11 +13,13 @@ namespace comp4976assn2.Models
     {
         [DisplayName("Client Reference Number")]
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [ForeignKey("SmartModel")]
         public int ClientReferenceNumber { get; set; }
+        public SmartModel SmartModel { get; set; }
 
         [DisplayName("Fiscal Year")]
+        [ForeignKey("FiscalYear")]
         public int FiscalId { get; set; }
-
         public virtual FiscalYearModel FiscalYear { get; set; }
 
         [Required]
@@ -55,19 +57,23 @@ namespace comp4976assn2.Models
         public int SwcFileNumber { get; set; }
 
         [DisplayName("Risk Level")]
+        [ForeignKey("RiskLevel")]
         public int RiskLevelId { get; set; }
         public virtual RiskLevelModel RiskLevel { get; set; }
 
         [DisplayName("Crisis")]
+        [ForeignKey("Crisis")]
         public int CrisisId { get; set; }
         public virtual CrisisModel Crisis { get; set; }
 
 
         [DisplayName("Service")]
+        [ForeignKey("Service")]
         public int ServiceId { get; set; }
         public virtual ServiceModel Service { get; set; }
 
         [DisplayName("Program")]
+        [ForeignKey("Program")]
         public int ProgramId { get; set; }
         public virtual ProgramModel Program { get; set; }
 
@@ -78,22 +84,27 @@ namespace comp4976assn2.Models
         public String RiskAssessmentAssignedTo { get; set; }
 
         [DisplayName("Risk Status")]
+        [ForeignKey("RiskStatus")]
         public int RiskStatusId { get; set; }
         public virtual RiskStatusModel RiskStatus { get; set; }
 
         [DisplayName("Assigned Worker")]
+        [ForeignKey("AssignedWorker")]
         public int AssignedWorkerId { get; set; }
         public virtual AssignedWorkerModel AssignedWorker { get; set; }
 
         [DisplayName("Referral Source")]
+        [ForeignKey("ReferralSource")]
         public int ReferralSourceId { get; set; }
         public virtual ReferralSourceModel ReferralSource { get; set; }
 
         [DisplayName("Referral Contact")]
+        [ForeignKey("ReferralContact")]
         public int ReferralContactId { get; set; }
         public virtual ReferralContactModel ReferralContact { get; set; }
 
         [DisplayName("Incident")]
+        [ForeignKey("Incident")]
         public int IncidentId { get; set; }
         public virtual IncidentModel Incident { get; set; }
 
@@ -103,14 +114,17 @@ namespace comp4976assn2.Models
         public String AbuserName { get; set; }
 
         [DisplayName("Abuser Relationship")]
+        [ForeignKey("AbuserRelationship")]
         public int AbuserRelationshipId { get; set; }
         public virtual AbuserRelationshipModel AbuserRelationship { get; set; }
 
         [DisplayName("Victim Of Incident")]
+        [ForeignKey("VictimOfIncident")]
         public int VictimOfIncidentId { get; set; }
         public virtual VictimOfIncidentModel VictimOfIncident { get; set; }
 
         [DisplayName("Family Violence File")]
+        [ForeignKey("FamilyViolenceFile")]
         public int FamilyViolenceFileId { get; set; }
         public virtual FamilyViolenceFileModel FamilyViolenceFile { get; set; }
 
@@ -121,18 +135,22 @@ namespace comp4976assn2.Models
         public char Gender { get; set; }
 
         [DisplayName("Ethnicity")]
+        [ForeignKey("Ethnicity")]
         public int EthnicityId { get; set; }
         public EthnicityModel Ethnicity { get; set; }
 
         [DisplayName("Age")]
+        [ForeignKey("Age")]
         public int AgeId { get; set; }
         public AgeModel Age { get; set; }
 
         [DisplayName("Repeat Client")]
+        [ForeignKey("RepeatClient")]
         public int RepeatClientId { get; set; }
         public RepeatClientModel RepeatClient { get; set; }
 
         [DisplayName("Duplicate File")]
+        [ForeignKey("DuplicateFile")]
         public int DuplicateFileId { get; set; }
         public DuplicateFileModel DuplicateFile { get; set; }
 
@@ -146,6 +164,7 @@ namespace comp4976assn2.Models
         public int NumberChildren18 { get; set; }
 
         [DisplayName("File Status")]
+        [ForeignKey("FileStatus")]
         public int FileStatusId { get; set; }
         public virtual FileStatusModel FileStatus { get; set; }
 
