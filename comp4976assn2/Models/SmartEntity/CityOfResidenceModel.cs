@@ -9,6 +9,7 @@ namespace comp4976assn2.Models.SmartEntity
     public class CityOfResidenceModel
     {
         [Key]
+        public int CityOfResidenceId { get; set; }
         public String CityOfResidence { get; set; }
 
         public List<SmartModel> Smart { get; set; }

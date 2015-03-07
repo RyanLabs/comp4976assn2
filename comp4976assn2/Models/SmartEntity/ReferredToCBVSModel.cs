@@ -9,6 +9,7 @@ namespace comp4976assn2.Models.SmartEntity
     public class ReferredToCBVSModel
     {
         [Key]
+        public int ReferredToCBVSId { get; set; }
         public String ReferredToCBVS { get; set; }
 
         public List<SmartModel> Smart { get; set; }
