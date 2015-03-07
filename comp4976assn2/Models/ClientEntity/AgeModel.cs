@@ -9,7 +9,8 @@ namespace comp4976assn2.Models.ClientEntity
     public class AgeModel
     {
         [Key]
+        public int AgeId { get; set; }
         public String Age { get; set; }
-        public List<ClientModel> Client { get; set; }
+        public ICollection<AgeModel> Clients { get; set; }
     }
 }
