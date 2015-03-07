@@ -281,14 +281,17 @@ namespace comp4976assn2.Controllers
         {
             var Db = new ApplicationDbContext();
             var role = Db.Roles.First(u => u.Name == id);
-            Db.Roles.Remove(role);
-            Db.SaveChanges();
+            if (role.Name != "Administrator")
+            {
+                Db.Roles.Remove(role);
+                Db.SaveChanges();
+            }
             return RedirectToAction("Roles");
         }
 
         //
         // GET: /Account/AddRole
-        [AllowAnonymous]
+        [Authorize(Roles = "Administrator")]
         public ActionResult AddRole()
         {
             return View();
@@ -297,7 +300,7 @@ namespace comp4976assn2.Controllers
         //
         // POST: /Account/AddRole
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> AddRole(EditRoleViewModel model)
         {

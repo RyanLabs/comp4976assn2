@@ -2,7 +2,14 @@
 @Html.HiddenFor(model => model.RoleName)
 <tr>
     <td style="text-align: center">
-        @Html.CheckBoxFor(model => model.Selected)
+        @if (Model.RoleName == "Administrator" && Model.RoleCount == 1 && Model.Selected)
+        {
+            @Html.CheckBoxFor(model => model.Selected, new {@disabled = "disabled"})
+        }
+        else
+        {
+            @Html.CheckBoxFor(model => model.Selected)
+        }
     </td>
     <td>
         @Html.DisplayFor(model => model.RoleName)

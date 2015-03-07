@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 // New namespace imports:
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace comp4976assn2.Models
 {
@@ -164,6 +166,16 @@ namespace comp4976assn2.Models
         public SelectRoleEditorViewModel() { }
         public SelectRoleEditorViewModel(IdentityRole role)
         {
+            if (role.Name == "Administrator")
+            {
+                Int32 count;
+                using (ApplicationDbContext db = new ApplicationDbContext())
+                {
+                    IdentityRole myRole = db.Roles.First(r => r.Name == "Administrator");
+                    count = db.Set<IdentityUserRole>().Count(r => r.RoleId == myRole.Id);
+                }
+                this.RoleCount = count;
+            }
             this.RoleName = role.Name;
         }
 
@@ -171,5 +183,7 @@ namespace comp4976assn2.Models
 
         [Required]
         public string RoleName { get; set; }
+
+        public int RoleCount { get; set; }
     }
 }

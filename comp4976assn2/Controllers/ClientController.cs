@@ -11,6 +11,7 @@ using comp4976assn2.Models;
 
 namespace comp4976assn2.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ClientController : Controller
     {
         private ClientContext db = new ClientContext();
