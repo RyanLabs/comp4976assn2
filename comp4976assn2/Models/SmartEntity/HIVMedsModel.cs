@@ -9,6 +9,7 @@ namespace comp4976assn2.Models.SmartEntity
     public class HIVMedsModel
     {
         [Key]
+        public int HIVMedsId { get; set; }
         public String HIVMeds { get; set; }
 
         public List<SmartModel> Smart { get; set; }

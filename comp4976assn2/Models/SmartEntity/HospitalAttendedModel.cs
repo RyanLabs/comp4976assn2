@@ -9,6 +9,7 @@ namespace comp4976assn2.Models.SmartEntity
     public class HospitalAttendedModel
     {
         [Key]
+        public int HospitalAttendedId { get; set; }
         public String HospitalAttended { get; set; }
 
         public List<SmartModel> Smart { get; set; }

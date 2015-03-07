@@ -12,6 +12,7 @@ using comp4976assn2.Models.ClientEntity;
 
 namespace comp4976assn2.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ReferralContactController : Controller
     {
         private ClientContext db = new ClientContext();

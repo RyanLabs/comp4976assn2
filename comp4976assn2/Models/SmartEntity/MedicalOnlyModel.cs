@@ -9,6 +9,7 @@ namespace comp4976assn2.Models.SmartEntity
     public class MedicalOnlyModel
     {
         [Key]
+        public int MedicalOnlyId { get; set; }
         public String MedicalOnly { get; set; }
 
         public List<SmartModel> Smart { get; set; }
