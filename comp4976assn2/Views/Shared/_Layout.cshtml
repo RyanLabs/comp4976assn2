@@ -27,7 +27,7 @@
                     @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
                     {
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Lookup Tables <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Client Lookup Tables <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 @*Client Entities*@
                                 <li>@Html.ActionLink("Abuser Relationship", "Index", "AbuserRelationship")</li>
@@ -47,9 +47,14 @@
                                 <li>@Html.ActionLink("Risk Level", "Index", "RiskLevel")</li>
                                 <li>@Html.ActionLink("Risk Status", "Index", "RiskStatus")</li>
                                 <li>@Html.ActionLink("Service", "Index", "Service")</li>
-                                <li>@Html.ActionLink("Victim Of Incident", "Index", "VictimOfIncident")</li>
+                                 <li>@Html.ActionLink("Victim Of Incident", "Index", "VictimOfIncident")</li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Smart Lookup Tables <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 @*Smart Entities*@
-                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Sex Work/Exploitation", "Index", "SexWorkExploitation")</li>
                                 <li>@Html.ActionLink("Multiple Perpetrators", "Index", "MultiplePerpetrators")</li>
                                 <li>@Html.ActionLink("Drug-facilitated Assault", "Index", "DrugFacilitatedAssault")</li>
@@ -72,8 +77,8 @@
                         <li>@Html.ActionLink("Administration", "Index", "Account")</li>
                     }
                 </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+                            @Html.Partial("_LoginPartial")
+</div>
         </div>
     </div>
     <div class="container body-content">
