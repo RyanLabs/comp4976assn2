@@ -26,7 +26,7 @@ namespace comp4976assn2.Migrations.IdentityMigrations
             // Create Roles
             const string admin = "Administrator";
             const string worker = "Worker";
-            const string report = "Report";
+            const string reporter = "Reporter";
 
             if (!roleManager.RoleExists(admin))
             {
@@ -36,18 +36,18 @@ namespace comp4976assn2.Migrations.IdentityMigrations
             {
                 roleManager.Create(new IdentityRole(worker));
             }
-            if (!roleManager.RoleExists(report))
+            if (!roleManager.RoleExists(reporter))
             {
-                roleManager.Create(new IdentityRole(report));
+                roleManager.Create(new IdentityRole(reporter));
             }
 
             // Create Users
             var passwordHash = new PasswordHasher();
             var password = passwordHash.HashPassword("P@$$w0rd");
 
-            var adam = new ApplicationUser { UserName = "adam", Email = "adam@gs.ca", PasswordHash = password };
-            var wendy = new ApplicationUser { UserName = "wendy", Email = "wendy@gs.ca", PasswordHash = password };
-            var rob = new ApplicationUser { UserName = "rob", Email = "rob@gs.ca", PasswordHash = password };
+            var adam = new ApplicationUser { UserName = "Adam", Email = "adam@gs.ca", PasswordHash = password };
+            var wendy = new ApplicationUser { UserName = "Wendy", Email = "wendy@gs.ca", PasswordHash = password };
+            var rob = new ApplicationUser { UserName = "Rob", Email = "rob@gs.ca", PasswordHash = password };
 
             context.Users.AddOrUpdate(u => u.UserName, adam);
             context.Users.AddOrUpdate(u => u.UserName, wendy);
@@ -60,7 +60,7 @@ namespace comp4976assn2.Migrations.IdentityMigrations
             // Add Users to Roles                  
             userManager.AddToRole(adam.Id, admin);
             userManager.AddToRole(wendy.Id, worker);
-            userManager.AddToRole(rob.Id, report);
+            userManager.AddToRole(rob.Id, reporter);
 
             base.Seed(context);
         }
