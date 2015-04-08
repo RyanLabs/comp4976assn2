@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace comp4976assn2
 {
@@ -11,6 +12,8 @@ namespace comp4976assn2
         public static void Register(HttpConfiguration config)
         {
             // TODO: Add any additional configuration code.
+            var cors = new EnableCorsAttribute("*", "*", "GET");
+            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
